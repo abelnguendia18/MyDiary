@@ -1,0 +1,134 @@
+﻿<Window x:Class="MyDiary.NeuesKontoAnlegen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyDiary"
+        mc:Ignorable="d"
+        Title="Neues Konto Anlegen" MinHeight="750" MaxHeight="750" MinWidth="650" MaxWidth="650"  WindowStartupLocation="CenterScreen">
+    <DockPanel Background="LightBlue">
+
+        <Grid DockPanel.Dock="Top">
+            <Image Source="images\logo1.png" Height="70" RenderTransformOrigin="0.305,0.571" Margin="-227,0,320.6,0.4" />
+        </Grid>
+
+        <Grid DockPanel.Dock="Left" Background="White" >
+            <Image  Source="images\registrieren.png" Margin="5,68,0,145.2" HorizontalAlignment="Left" Width="117" />
+
+        </Grid>
+
+        <Grid DockPanel.Dock="Right"  >
+
+            <Grid.Background>
+                <ImageBrush ImageSource="images\home1.png"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+
+            <Image Source="images\home1.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="8" Margin="0,52,-0.4,0"/>
+            <Button Content="Validieren" Name="btn_validierenNeuesKontoAnlegen" Click="onClick_btn_validierenNeuesKontoAnlegen" Grid.Row="7" Grid.Column="1" Margin="0,22.2,45.6,31.6" HorizontalAlignment="Right" Width="152" />
+            <Button Content="Zurück" Name="btn_zurückNeuesKontoAnlegen" Click="btn_onClick_zurückNeuesKontoAnlegen" Grid.Row="7" Grid.Column="0" Width="152" Margin="28,22.2,76.8,31.6" />
+            <GroupBox Background="White" Header="Konto erstellen"  Margin="25,47,31,0" Grid.RowSpan="8" VerticalAlignment="Top"  Grid.ColumnSpan="2" Height="500" Width="450">
+                <StackPanel >
+                    <Grid Margin="5,35,4.8,10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Benutzername" Grid.Row="0" Grid.Column="0" Margin="0,0,24.4,-0.4"  />
+                        <Label Content="*" Grid.Row="0"  Foreground="red" Margin="5.6,1,104.8,-4.4" RenderTransformOrigin="0.853,0.04" Grid.Column="1" />
+                        <TextBox Name="txtBox_benutzername" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="216" Margin="0,0,21.2,-0.4" />
+
+                    </Grid>
+                    <Grid Margin="5,50,5,10"  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Passwort" Grid.Row="0" Grid.Column="0"   Margin="0,0,10,-0.4" />
+                        <Label Content="*" Grid.Row="0" Foreground="red"  Grid.Column="1"   Margin="41.8,1,31.6,-4.4" Grid.RowSpan="2" Height="29" VerticalAlignment="Top"  />
+                        <PasswordBox x:Name="txtBox_passwortNeuesKonto" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  HorizontalAlignment="Right" Width="218"  Grid.RowSpan="2" Margin="0,0,20.2,-0.4"/>
+                    </Grid>
+                    <Grid Margin="5,55,5,10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="198*"/>
+                            <ColumnDefinition Width="62*"/>
+                            <ColumnDefinition Width="143*"/>
+                            <ColumnDefinition Width="36*"/>
+                            <ColumnDefinition Width="154*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Passwort wiederholen" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="2" Margin="0,0,0,-0.4"/>
+                        <Label Content="*" Grid.Row="0" Foreground="red" HorizontalAlignment="Left"  Width="33" Grid.Column="1" Margin="7.6,0,0,-4.4" Height="25" VerticalAlignment="Bottom" />
+                        <PasswordBox Name="txtBox_wiederholtesPasswortNeuesKonto" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Right" Width="216" Margin="0,0,21.2,-0.4" Grid.ColumnSpan="3"/>
+                    </Grid>
+                    <Grid Margin="5,65,5,10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="198*"/>
+                            <ColumnDefinition Width="197*"/>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="62*"/>
+                            <ColumnDefinition Width="130*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="E-Mail-Adresse"  HorizontalAlignment="Left" Margin="0,0,0,-0.4" Width="204" Grid.ColumnSpan="2"/>
+                        <Label Content="*" Grid.Row="0"  Foreground="red" HorizontalAlignment="Left" Width="34" Margin="8.6,1,0,-1.4" Grid.Column="1" RenderTransformOrigin="0.533,0.577" Height="26" VerticalAlignment="Top" />
+                        <TextBox Name="txtBox_emailNeuesKontoAnlegen" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Right" Width="216" Margin="0,0,21.2,-0.4" Grid.ColumnSpan="4"/>
+                    </Grid>
+                    <Grid Margin="5,72,5,10"  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="26*" />
+                            <RowDefinition Height="0*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="74*" />
+                            <ColumnDefinition Width="74*" />
+                            <ColumnDefinition Width="74*" />
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="39*"/>
+                            <ColumnDefinition Width="74*" />
+                            <ColumnDefinition Width="74*" />
+                            <ColumnDefinition Width="74*" />
+                            <ColumnDefinition Width="74*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="E-Mail-Adresse wiederholen" Grid.Row="0" Grid.ColumnSpan="4" Margin="-5,3,0,-0.2" Grid.RowSpan="3" HorizontalAlignment="Left" Width="183" />
+                        <Label Content="*" Grid.Row="0" Grid.Column="2"  Foreground="red" Margin="43.8,4,13.4,-1.2" RenderTransformOrigin="-0.33,0.552" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtBox_wiederholteEmailNeuesKontoAnlegen" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="5"  HorizontalAlignment="Right" Width="216" Margin="0,1,21.2,0.8" Grid.RowSpan="3"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+
+
+        </Grid>
+    </DockPanel>
+</Window>

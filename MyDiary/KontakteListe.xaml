@@ -1,0 +1,23 @@
+﻿<Window x:Class="MyDiary.KontakteListe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyDiary"
+        mc:Ignorable="d"
+        Title="Liste der Kontakte" MinHeight="450" MaxHeight="450" MinWidth="850" MaxWidth="850"  WindowStartupLocation="CenterScreen">
+    <Grid Background="AliceBlue">
+        <ListView Name="lv_kontakteListe" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Vorname" Width="200" DisplayMemberBinding="{Binding mVorname}"/>
+                    <GridViewColumn Header="Nachname" Width="200" DisplayMemberBinding="{Binding mNachname}"/>
+                    <GridViewColumn Header="Telefonnummer" Width="200" DisplayMemberBinding="{Binding mTelefonnummer}"/>
+                    <GridViewColumn Header="E-Mail-Adresse" Width="200" DisplayMemberBinding="{Binding mEmailAdresse}"/>
+                </GridView>
+            </ListView.View>
+            
+        </ListView>
+
+    </Grid>
+</Window>

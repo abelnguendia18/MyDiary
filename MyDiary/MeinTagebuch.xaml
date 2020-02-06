@@ -1,0 +1,92 @@
+﻿<Window x:Class="MyDiary.MeinTagebuch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyDiary"
+        mc:Ignorable="d"
+        Title="Mein Tagebuch" MinHeight="650" MaxHeight="650" MinWidth="1000" MaxWidth="1000" WindowStartupLocation="CenterScreen">
+    <DockPanel Background="LightBlue">
+
+        <Grid DockPanel.Dock="Top" Background="LightBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+            <Image Source="images\logo1.png" Grid.Row="0" Grid.Column="0"  Stretch="Fill" Height="55" Margin="0,0,81.4,0" Grid.RowSpan="4" VerticalAlignment="Top" />
+            <Label Content="Mein Tagebuch" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="30" FontFamily="Times " HorizontalContentAlignment="Center"/>
+            <!--<Label  Content="LabelUserId" Grid.Row="4" HorizontalContentAlignment="Right" Grid.Column="2"/>-->
+
+
+
+
+
+        </Grid>
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="96*"/>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="54*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Click="onClick_btn_meinTagebuch" Grid.Row="0" Grid.Column="0"  Grid.RowSpan="2" Grid.ColumnSpan="2" Height="64" Width="120" Margin="5,40,-41.6,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+
+                    <!--<Image Source="images\tagebuch2.png" Stretch="None"/>-->
+                    <Label Padding="0" Height="20" Content="Mein Tagebuch"/>
+                </StackPanel>
+            </Button>
+            <Button Click="onClick_btn_meineKontakte" Grid.Row="3" Grid.Column="0" Content="Meine Kontakte" Grid.ColumnSpan="2" Height="64" Width="120" Margin="5,1.4,-41.6,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+            <Button Click="onClick_btn_termineUndErinnerungen" Grid.Row="5" Grid.Column="0" Content="Termine" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="64" Width="120" Margin="5,4.4,-42.6,0" VerticalAlignment="Top"/>
+            <!--<Button Click="onClick_btn_eMails" Grid.Row="5" Grid.Column="0" Content="E-Mails" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="64"  Margin="5,46.2,-42.2,44.8" VerticalAlignment="Top"/>-->
+        </Grid>
+
+        <Grid Background="White" DockPanel.Dock="Right" Margin="60,10,10,20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Height="50" Stretch="Fill" StretchDirection="UpOnly">
+                <Button Content="Neue Notiz erstellen" Name="btn_neueNotizErstellen" Click="onClick_btn_neueNotizErstellen"    />
+
+            </Viewbox>
+            <Viewbox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Height="50" Stretch="Fill" StretchDirection="UpOnly" >
+                <Button Name="btn_gespeicherteNotizenAnschauen" Content="Gespeicherte Notizen anschauen" Click="onClick_btn_gespeicherteNotizenAnschauen" />
+            </Viewbox>
+        </Grid>
+
+
+    </DockPanel>
+</Window>

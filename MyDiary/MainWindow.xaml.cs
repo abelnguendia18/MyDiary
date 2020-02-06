@@ -24,5 +24,18 @@ namespace MyDiary
         {
             InitializeComponent();
         }
+
+        public void btn_sichRegistrierenClick(object sender, RoutedEventArgs e)
+        {
+            
+            (new NeuesKontoAnlegen()).Show();
+            this.Close();
+        }
+        public void btn_sichEinloggenClick(object sender, RoutedEventArgs e)
+        {
+            
+            (new Einloggen()).Show();
+            this.Close();
+        }
     }
 }

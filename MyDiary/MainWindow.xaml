@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyDiary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Icon="images\logo.ico"
+        Title="MyDiary" MinHeight="650" MaxHeight="650" MinWidth="600" MaxWidth="600" WindowStartupLocation="CenterScreen" >
+
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Image Source="images\logo1.png" Grid.Row="0" Grid.Column="0"  Stretch="Fill" Margin="0,0,172.8,72"/>
+        <Button Content=" Sich einloggen" Name="btn_sichEinloggen" Click="btn_sichEinloggenClick" Grid.Row="0" Grid.Column="1"  Margin="123.2,6,9.6,83" />
+        <Image Source="images\home1.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="0,52,-0.4,0"/>
+        <Button Content="Sich registrieren" Name="btn_sichRegistrieren" Click="btn_sichRegistrierenClick" Grid.Row="4" Grid.ColumnSpan="2" Margin="210,81,205.6,10"/>
+
+
     </Grid>
+
+
+
+
+
+
 </Window>

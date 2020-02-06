@@ -35,8 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +58,62 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="E_Mails.xaml.cs">
+      <DependentUpon>E_Mails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InternetChecker.cs" />
+    <Compile Include="Kontakt.cs" />
+    <Compile Include="KontakteListe.xaml.cs">
+      <DependentUpon>KontakteListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KontaktVerwaltung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KontaktVerwaltung.Designer.cs">
+      <DependentUpon>KontaktVerwaltung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NeueEmailSchicken.xaml.cs">
+      <DependentUpon>NeueEmailSchicken.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NeuenKontaktErstellen.xaml.cs">
+      <DependentUpon>NeuenKontaktErstellen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NeueNotizErstellen.xaml.cs">
+      <DependentUpon>NeueNotizErstellen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotizenAnzeiger.xaml.cs">
+      <DependentUpon>NotizenAnzeiger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Termin.cs" />
+    <Compile Include="TermineAnzeiger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TermineAnzeiger.Designer.cs">
+      <DependentUpon>TermineAnzeiger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TermineUndErinnerungen.xaml.cs">
+      <DependentUpon>TermineUndErinnerungen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="Veranstaltung.cs" />
+    <Page Include="Einloggen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="E_Mails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KontakteListe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +122,59 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Einloggen.xaml.cs">
+      <DependentUpon>Einloggen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MeineKontakte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MeinTagebuch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NeueEmailSchicken.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NeuenKontaktErstellen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NeueNotizErstellen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NeuesKontoAnlegen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotizenAnzeiger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TermineUndErinnerungen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MeineKontakte.xaml.cs">
+      <DependentUpon>MeineKontakte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeinTagebuch.xaml.cs">
+      <DependentUpon>MeinTagebuch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NeuesKontoAnlegen.xaml.cs">
+      <DependentUpon>NeuesKontoAnlegen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,9 +188,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="KontaktVerwaltung.resx">
+      <DependentUpon>KontaktVerwaltung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermineAnzeiger.resx">
+      <DependentUpon>TermineAnzeiger.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +205,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\home.PNG" />
+    <Resource Include="images\logo2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\logo1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\logo3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\home1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Attach_16x.png" />
+    <Resource Include="images\Bold_12x.png" />
+    <Resource Include="images\Italic_12x.png" />
+    <Resource Include="images\Underline_12x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Export_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Save_24x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\OpenFolder_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\login.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\einloggen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\registrieren.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\tagebuch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\tagebuch2.png" />
+    <Resource Include="images\tagebuch3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="medias\sound1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
